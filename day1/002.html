@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  .msg{
+    width: 300px;
+    height: 300px;
+    background-color: #f00;
+    position: absolute;
+    top: 0;
+    left: -1000em;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+    /*transform: rotate3d(0, 0, 0, 0deg);*/
+    transition: opacity 1s, left 0s 1s;
+  }
+  .show{
+    left: 0;
+    opacity: 1;
+    transition: opacity 1s;
+  }
+  .msg .close{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: -15px;
+    top: -15px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    font-family: arial;
+  }
+  </style>
+</head>
+<body>
+  <a class="btn" href="javascript:;">按我跳出訊息</a>
+  <div class="msg show">
+    msg
+  </div>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $('.btn').click(function(){
+        $('.msg').removeClass()
+      })
+      $('.close').click(function(){
+        $('.show').removeClass('show')
+      })
+    })
+  </script>
+
+</body>
+</html>

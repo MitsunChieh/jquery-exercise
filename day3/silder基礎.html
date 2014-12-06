@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; list-style: none}
+    body{
+      text-align: center;
+    }
+    .slider{
+      width: 400px;
+      background-color: #aaa;
+    }
+    .control{
+      background-color: #666;
+    }
+    .control li{
+      display: inline-block;
+    }
+    .control a{
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: #000;
+      border-radius: 50%;
+      margin: 6px;
+    }
+    .control a:hover{
+      background-color: #ff0;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <ul class="pic">
+      <li>pic-1</li>
+      <li>pic-2</li>
+      <li>pic-3</li>
+      <li>pic-4</li>
+      <li>pic-5</li>
+    </ul>
+    <ul class="control"></ul>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+    $(function(){
+
+      var picCount = $('.pic li').length;
+      // alert(picCount);
+
+      for (var i = 0; i < picCount; i++) {
+        $('.control').append('<li><a href="javascrip:;"></a></li>')
+      }
+
+    })
+  </script>
+</body>
+</html>

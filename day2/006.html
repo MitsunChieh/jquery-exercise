@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; list-style: none}
+    div{
+      background-color: #aaa;
+      height: 100px;
+      width: 100px;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="javascript:;" class="btn-reset">reset</a>
+  <div></div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+    $(function(){
+      var mm = 20;
+      $('div').click(function(){
+        $(this).stop(true, false).animate({left: mm+=10}).animate({top: mm+=50})
+      })
+      $('.btn-reset').click(function(){
+        $('div').css({left:20, top:20});
+        mm = 20;
+      })
+
+    })
+  </script>
+</body>
+</html>

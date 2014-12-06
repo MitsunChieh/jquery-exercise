@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; list-style: none}
+    body{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="xx">xx</div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+    $(function(){
+
+      var i = 0;
+      setInterval(tt, 10)
+
+      function tt(){
+        $('body').prepend(i+'<br>');
+        i++;
+      }
+
+    })
+  </script>
+</body>
+</html>

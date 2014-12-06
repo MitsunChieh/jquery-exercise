@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  .show{
+    left: 0;
+    opacity: 1;
+    transition: opacity 1s;
+  }
+  .msg .close{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: -15px;
+    top: -15px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    font-family: arial;
+  }
+  </style>
+</head>
+<body>
+  <a class="btn" href="javascript:;">按我按我</a>
+  <div class="msg show">
+    msg
+  </div>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $('.btn').click(function(){
+        $('.msg').css({color:'red', 'font-weight':'bold', fontSize:'50px'})
+      })
+    })
+  </script>
+
+</body>
+</html>

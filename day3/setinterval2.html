@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; list-style: none}
+    body{
+      text-align: center;
+    }
+    .clear{
+      display: block;
+      width: 200px;
+      height: 200px;
+      background-color: #aaa;
+      position: fixed;
+      left: 300px;
+      top: 20px;
+      line-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <a href="javescript:;" class="clear">STOP!</a>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+    $(function(){
+
+      var i = 0;
+
+      $('.clear').hover(function(){
+          clearInterval(ST);
+        }, function(){
+          ST = setInterval(tt, 10);
+        }
+      )
+
+      var ST = setInterval(tt, 10);
+
+      function tt(){
+        $('body').prepend(i+'<br>');
+        i++;
+      }
+
+    })
+  </script>
+</body>
+</html>

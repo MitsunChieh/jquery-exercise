@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; list-style: none}
+    body{
+      text-align: center;
+    }
+    .xx{
+      width: 400px;
+      height: 50px;
+      background-color: #aaa;
+      margin: 20px auto;
+    }
+    .oo{
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <a href="javascript:;">copy xx to after</a>
+  <div class="xx">xx</div>
+  <div class="xx">xx</div>
+  <div class="xx">xx</div>
+  <div class="xx">xx</div>
+  <div class="xx">xx</div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+    $(function(){
+
+      var xxCopy = $('.xx').clone();
+      $('a').click(function(){
+        $('.xx').after(xxCopy)
+      })
+
+
+    })
+  </script>
+</body>
+</html>

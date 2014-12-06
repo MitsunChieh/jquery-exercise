@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  div{
+    width:300px;
+    height: 300px;
+    background-color: #aaa;
+  }
+  </style>
+</head>
+<body>
+  <a href="javascript:;" class="btn-show">show</a>
+  <a href="javascript:;" class="btn-hide">hide</a>
+  <div></div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
+
+    $(function(){
+      $('.btn-show').click(function(){
+        $('div').fadeIn();
+      })
+
+
+      $('.btn-hide').click(function(){
+        $('div').fadeOut();
+      })
+
+    })
+
+  </script>
+</body>
+</html>

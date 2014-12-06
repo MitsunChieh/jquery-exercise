@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; list-style: none}
+    ul{width: 300px; margin: auto;}
+    h1{
+      background-color: #aaa;
+    }
+    div{
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>
+      <h1>click me</h1>
+      <div>content content content</div>
+    </li>
+    <li>
+      <h1>click me</h1>
+      <div>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content</div>
+    </li>
+    <li>
+      <h1>click me</h1>
+      <div>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content</div>
+    </li>
+    <li>
+      <h1>click me</h1>
+      <div>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content</div>
+    </li>
+    <li>
+      <h1>click me</h1>
+      <div>content content</div>
+    </li>
+    <li>
+      <h1>click me</h1>
+      <div>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content</div>
+    </li>
+  </ul>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
+    $(function(){
+
+      $('h1').click(function(){
+        $(this).siblings('div').slideToggle();
+      })
+
+    })
+  </script>
+</body>
+</html>

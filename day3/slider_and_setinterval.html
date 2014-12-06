@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; list-style: none}
+    body{
+      text-align: center;
+    }
+    .clear{
+      display: block;
+      width: 200px;
+      height: 200px;
+      background-color: #aaa;
+      position: fixed;
+      left: 300px;
+      top: 20px;
+      line-height: 200px;
+    }
+    .slider{
+      width: 500px;
+      /*height: 300px;*/
+      border: 10px solid #aaa;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+    .pic{
+      width: 1500px;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    .pic li{
+      float: left;
+    }
+    .pic li img{
+      vertical-align: middle;
+    }
+    .clearFix{
+      width: 100%;
+      height: 0;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider">
+    <ul class="pic">
+      <li><img src="pic/0.jpg" alt=""></li>
+      <li><img src="pic/1.jpg" alt=""></li>
+      <li><img src="pic/2.jpg" alt=""></li>
+    </ul>
+    <div class="clearFix"></div>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+    $(function(){
+
+      var t = 1;
+      var picCount = $('.pic li').length;
+      var sliderW = 500;
+      var TT = setInterval(pp, 2000);
+
+      function pp(){
+        $('.pic').animate({left: t * sliderW * -1}, 300);
+        if(t < picCount -1){
+          t++;
+        }else{
+          t = 0;
+        }
+      }
+
+    })
+  </script>
+</body>
+</html>

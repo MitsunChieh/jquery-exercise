@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; list-style: none}
+    body{
+      text-align: center;
+    }
+    ul{
+      padding: 10px;
+      background-color: #aaa;
+      display: inline-block;
+      width: 200px;
+      margin: 10px;
+    }
+    li{
+      color: #fff;
+      background-color: #666;
+      margin: 10px;
+      padding: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <ul>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+  </ul>
+  <ul>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+  </ul>
+  <ul>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+  </ul>
+  <ul>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+  </ul>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+    $(function(){
+
+      $('li').click(function(){
+        $(this).css({'background-color': 'red'})
+        $(this).siblings().css({'background-color': '#ff0'})
+        $(this).parent().css({'background-color': '#000'})
+        $(this).parent().siblings().css({'background-color': '#eee'})
+        $(this).parents().css({'background-color': '#ddd'})
+      })
+
+    })
+  </script>
+</body>
+</html>

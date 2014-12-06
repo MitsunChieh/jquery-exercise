@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  .box{
+    width: 100%px;
+    background-color: #aaa;
+  }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="javascrip:;">b1</a></li>
+    <li><a href="javascrip:;">b2</a></li>
+    <li><a href="javascrip:;">b3</a></li>
+    <li><a href="javascrip:;">b4</a></li>
+    <li><a href="javascrip:;">b5</a></li>
+  </ul>
+  <div class="box b1">b1</div>
+  <div class="box b2">b2</div>
+  <div class="box b3">b3</div>
+  <div class="box b4">b4</div>
+  <div class="box b5">b5</div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+  $(function(){
+
+    var winH = $(window).height();
+    var din_index = 0;
+    $('.box').height(winH);
+    $(window).scroll(function(){
+      din_index = $(window).scrollTop()/winH;
+
+
+      var scroll_top = $(window).scrollTop();
+      console.log(scroll_top);
+      console.log(windowH);
+      console.log($('body').height() - windowH);
+      if(scroll_top >= $('body').height() - windowH){
+        $('.box').addClass('show');
+      }else{
+        $('.box').removeClass('show');
+      }
+    })
+
+  })
+  </script>
+
+</body>
+</html>

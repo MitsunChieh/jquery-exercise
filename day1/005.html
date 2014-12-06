@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  .msg{
+    width: 300px;
+    height: 300px;
+    background-color: #f00;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;
+  }
+  </style>
+</head>
+<body>
+  <a class="btn-show-hide" href="javascript:;">切換顯示MSG</a>
+  <div class="msg">
+    msg
+  </div>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
+
+    $(function(){
+
+      var $msg = $('.msg')
+
+      $('.btn-show-hide').click(function(){
+        $msg.toggle();
+      })
+
+      $msg.click(function(){
+        $msg.toggle();
+      })
+
+
+    })
+
+  </script>
+
+</body>
+</html>

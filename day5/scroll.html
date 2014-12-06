@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  body{
+    height: 4000px;
+  }
+  .box{
+    width: 100px;
+    height: 100px;
+    background-color: #aaa;
+    position: fixed;
+    top: 50%;
+    margin-top: -50px;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: opacity 1s;
+       -moz-transition: opacity 1s;
+        -ms-transition: opacity 1s;
+         -o-transition: opacity 1s;
+            transition: opacity 1s;
+  }
+  .show{
+    opacity: 1;
+  }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+  $(function(){
+
+    var i = 0;
+    var windowH = $(window).height();
+    $(window).scroll(function(){
+      var scroll_top = $(window).scrollTop();
+      console.log(scroll_top);
+      console.log(windowH);
+      console.log($('body').height() - windowH);
+      if(scroll_top >= $('body').height() - windowH){
+        $('.box').addClass('show');
+      }else{
+        $('.box').removeClass('show');
+      }
+    })
+
+  })
+  </script>
+
+</body>
+</html>

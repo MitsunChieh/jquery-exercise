@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; list-style: none}
+    body{
+      text-align: center;
+    }
+    ul{
+      padding: 10px;
+      background-color: #aaa;
+      display: inline-block;
+      width: 200px;
+      margin: 10px;
+    }
+    li{
+      color: #fff;
+      background-color: #666;
+      margin: 10px;
+      padding: 6px;
+    }
+    /*li[class]{
+      color: #f00;
+    }*/
+    li:not([class]){
+      color: #aaa;
+    }
+    p{
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <p>點擊第一個ul可選到該ul的所有子項目</p>
+
+  <ul>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+  </ul>
+  <ul>
+    <li class="reset">中華民國會消失</li>
+    <li class="this">連勝文財經專家</li>
+    <li class="siblings">張麗善代兄參選市長</li>
+    <li class="parent">你好我的爸爸是馬鶴齡</li>
+    <li class="parents">連戰連震東連橫</li>
+    <li class="parent-and-siblings">蔣友柏叩安蔣孝文</li>
+    <li class="index">馬王算老幾</li>
+    <li class="parents-length">蔡萬才有幾個兄弟？</li>
+    <li class="length">王永慶到底生了幾個？</li>
+    <li>I, li.</li>
+  </ul>
+  <ul>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li class="up-stair">UpStair</li>
+    <li class="up-stair-all">UpStairAll</li>
+    <li class="down-stair">DownStair</li>
+    <li class="down-stair-all">DownStairAll</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+  </ul>
+  <ul>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+    <li>I, li.</li>
+  </ul>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+    $(function(){
+
+      $('.reset').click(function(){
+        window.location.reload();
+      })
+
+      $('.this').click(function(){
+        $(this).css({'background-color': '#000'});
+      })
+
+      $('.siblings').click(function(){
+        $(this).siblings().css({'background-color': '#000'});
+      })
+
+      $('.parent').click(function(){
+        $(this).parent().css({'background-color': '#000'});
+      })
+
+      $('.parents').click(function(){
+        $(this).parents().css({'background-color': '#000'});
+      })
+
+      $('.parent-and-siblings').click(function(){
+        $(this).parent().siblings('ul').css({'background-color': '#000'});
+      })
+
+      $('.index').click(function(){
+        var xxx = $(this).index() + 1;
+        alert(xxx)
+      })
+
+      $('.parents-length').click(function(){
+        var xxx = $(this).siblings().length;
+        alert(xxx)
+      })
+
+      $('.length').click(function(){
+        var xxx = $(this).siblings().length + 1;
+        alert(xxx)
+      })
+
+      $('.up-stair').click(function(){
+        $(this).prev().css({'background-color': '#000'});
+      })
+
+      $('.up-stair-all').click(function(){
+        $(this).prevAll().css({'background-color': '#000'});
+      })
+
+      $('.down-stair').click(function(){
+        $(this).next().css({'background-color': '#000'});
+      })
+
+      $('.down-stair-all').click(function(){
+        $(this).nextAll().css({'background-color': '#000'});
+      })
+
+      $('ul:first').click(function(){
+        $(this).children().css({'background-color': '#000'});
+      })
+
+      $('ul:last').click(function(){
+        $(this).find('li').css({'background-color': '#000'});
+      })
+
+    })
+  </script>
+</body>
+</html>

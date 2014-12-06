@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; list-style: none}
+    body{
+      text-align: center;
+    }
+    .xx{
+      width: 400px;
+      height: 50px;
+      background-color: #aaa;
+      margin: auto;
+    }
+    a{
+      display: inline-block;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <a href="javascript:;" class="html">html</a>
+  <a href="javascript:;" class="text">text</a>
+  <a href="javascript:;" class="remove">remove</a>
+  <a href="javascript:;" class="append">append</a>
+  <div class="xx">xx</div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+    $(function(){
+
+      $('.html').click(function(){
+        $('.xx').html('<p>html insert</p>')
+      })
+
+      $('.text').click(function(){
+        $('.xx').text('<p>text insert</p>')
+      })
+
+      $('.remove').click(function(){
+        $('.xx').remove()
+      })
+
+      $('.append').click(function(){
+        $('body').append('<div class="xx">xx</div>')
+      })
+
+    })
+  </script>
+</body>
+</html>

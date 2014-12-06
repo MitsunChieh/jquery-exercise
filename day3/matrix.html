@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; list-style: none}
+    body{
+      text-align: center;
+      background-color: #000;
+    }
+    .header{
+      width: 500px;
+      /*margin:0 auto 0 auto;*/
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      margin-left: -250px;
+      background-color: rgba(244, 137, 11, .5);
+    }
+    a{
+      display: inline-block;
+      /*width: 100px;*/
+      padding: 10px;
+      margin: 10px;
+      text-decoration: none;
+      background-color: rgba(208, 124, 24, .8);
+      border: #d07c18 solid 2px;
+      box-shadow: #000 5px 5px 4px;
+      /*background-color: #d07c18;*/
+      color: #fff;
+    }
+    .container{
+      width: 400px;
+      margin:0 auto;
+      /*border: 10px solid #f00;*/
+      font-size: 0;
+    }
+    .container div{
+      color: #397607;
+      /*font-weight: bold;*/
+      text-shadow: #33600e 2px 2px 2px;
+      /*float: left;*/
+      display: inline-block;
+      vertical-align: top;
+      width: 100px;
+      height: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a href="javascript:;" class="stop">STOP!</a>
+    <a href="javascript:;" class="continue">Continue</a>
+    <a href="javascript:;" class="restart">Restart</a>
+    <a href="javascript:;" class="to-btm">To bottom</a>
+  </div>
+
+  <div class="container">
+    <div class="1"></div>
+    <div class="2"></div>
+    <div class="3"></div>
+    <div class="4"></div>
+    <div class="5"></div>
+    <div class="6"></div>
+    <div class="7"></div>
+    <div class="8"></div>
+    <div class="9"></div>
+    <div class="10"></div>
+    <div class="11"></div>
+    <div class="12"></div>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+    $(function(){
+
+      var n = $('.container div').length;
+      var arr = new Array(n);
+      for(var i = 0; i < n; i++){
+        arr[i] = i+1;
+      }
+      $('.container').width(100*n)
+
+      var index;
+      var j;
+      var t = 1;
+      var TT = setInterval(counter, t);
+
+      function counter(){
+        index = Math.floor(Math.random()*n);
+        // j = Math.floor(Math.pow(3.7 ,Math.random()*10+1));
+        j = Math.floor(Math.random()*13)+1;
+        $('.'+arr[index]).prepend(j+'<br>');
+        j++;
+      }
+
+      $('.stop').click(function(){
+        clearInterval(TT);
+      })
+
+      $('.continue').click(function(){
+        clearInterval(TT);
+        TT = setInterval(counter, t);
+      })
+
+      $('.restart').click(function(){
+        location.reload();
+      })
+
+      $('.to-btm').click(function(){
+        scrollTo(0,document.body.scrollHeight);
+      })
+
+    })
+  </script>
+</body>
+</html>
